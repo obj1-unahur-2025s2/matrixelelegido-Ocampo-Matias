@@ -1,9 +1,51 @@
+import matrix.*
 
 
-describe "group of tests " {
-
-  test "test 01" {
-    assert.equals(100, 50+50)
+describe "Testeamos a Neo"{
+  test "Neo es el elegido" {
+    assert.that(neo.esElElegido())
+    
   }
+
+  test "vitalidad inicial de Neo"{
+    assert.equals(10, neo.vitalidad())
+  }
+  test "vitalidad de Neo despues de un salto" {
+    neo.saltar()
+    assert.equals(5, neo.vitalidad())
+    
+  }
+}
+
+describe "Testeamos a Morfeo"{
+  test "Morfeo no es el elegido" {
+    assert.notThat(morfeo.esElElegido())
+    
+  }
+
+  test "vitalidad inicial de morfeo"{
+    assert.equals(8, morfeo.vitalidad())
+  }
+  test "vitalidad de morfeo despues de un salto" {
+    morfeo.saltar()
+    assert.equals(7, morfeo.vitalidad())
+    
+  }
+  test "morfeo se cansa despues de un salto" {
+    morfeo.saltar()
+    assert.that(morfeo.estaCansado())
+    
+  }
+}
+describe "Testeamos a trinity"{
+  test "trinity no es el elegido" {
+    assert.notThat(trinity.esElElegido())
+    
+  }
+
+  test "vitalidad inicial de trinity"{
+    assert.equals(0, trinity.vitalidad())
+  }
+
 
 }
